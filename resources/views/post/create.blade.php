@@ -6,7 +6,7 @@
         @csrf
         <div class="row">
             <div class="col-md-8 offset-2">
-                <h2>Add new post</h2>
+                <h2>Add post</h2>
                 <div class="form-group">
                     <label for="caption" class="col-form-label">{{ __('Caption') }}</label>
                     <input 
@@ -34,7 +34,7 @@
                         </span>
                     @enderror
                 </div>
-                <button type="submit" class="btn btn-primary mt-3">{{ __('Add new post') }}</button>
+                <button type="submit" class="btn btn-primary mt-3">{{ __('Add post') }}</button>
             </div>
         </div>
     </form>
