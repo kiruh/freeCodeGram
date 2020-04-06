@@ -7,7 +7,10 @@
             <img src="https://scontent-sof1-1.cdninstagram.com/v/t51.2885-19/s150x150/83213956_3360255157381124_5752385570823208960_n.jpg?_nc_ht=scontent-sof1-1.cdninstagram.com&_nc_ohc=qp4DsZcNnS0AX8S8RvV&oh=dd318e1684b5f99cb9c1f2a2a8331d68&oe=5EB24046" alt="" class="rounded-circle">
         </div>
         <div class="col-md-8 pt-5">
-            <div><h1>{{ $user->username }}</h1></div>
+            <div class="d-flex justify-content-between align-items-baseline">
+                <h1>{{ $user->username }}</h1>
+                <a href="">Add new post</a>
+            </div>
             <div class="d-flex">
                 <div class="pr-5"><strong>153</strong> posts</div>
                 <div class="pr-5"><strong>23k</strong> followers</div>
