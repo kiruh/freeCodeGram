@@ -7,6 +7,7 @@
         <div class="row">
             <div class="col-md-8 offset-2">
                 <h2>Add post</h2>
+                
                 <div class="form-group">
                     <label for="caption" class="col-form-label">{{ __('Caption') }}</label>
                     <input 
@@ -25,6 +26,7 @@
                         </span>
                     @enderror
                 </div>
+
                 <div class="form-group">
                     <label for="image" class="col-form-label">{{ __('Image') }}</label>
                     <input type="file" name="image" id="image" class="form-control-file @error('image') is-invalid @enderror" required>
@@ -34,6 +36,7 @@
                         </span>
                     @enderror
                 </div>
+                
                 <button type="submit" class="btn btn-primary mt-3">{{ __('Add post') }}</button>
             </div>
         </div>
