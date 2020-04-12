@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-4 d-flex justify-content-center align-items-center">
-            <img src="/storage/{{ $user->profile->image }}" alt="" class="rounded-circle w-50">
+            <img src="{{ $user->profile->getImage() }}" alt="" class="rounded-circle w-50">
         </div>
         <div class="col-md-8 pt-5">
             <div class="d-flex justify-content-between align-items-center">
@@ -13,6 +13,8 @@
                     @can('update', $user->profile)
                         <a href="/p/create" class="btn btn-primary">Add post</a>
                         <a href="/profile/{{ $user->id }}/edit" class="btn btn-primary">Edit profile</a>
+                    @else
+                        <button class="btn btn-primary">Follow</button>
                     @endcan
                 </div>
             </div>

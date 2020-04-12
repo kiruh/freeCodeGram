@@ -31,7 +31,7 @@ class ProfileController extends Controller
         $data = request()->validate([
             'title' => 'required',
             'description' => 'required',
-            'url' => 'url',
+            'url' => ['url', 'nullable'],
             'image' => '',
         ]);
         if(request()->image) {
@@ -41,8 +41,12 @@ class ProfileController extends Controller
             // fit image to square
             $image = Image::make(public_path("storage/{$imagePath}"))->fit(1000, 1000);
             $image->save();
+
+            $data = array_merge($data, [
+                'image' => $imagePath
+            ]);
         }
-        $user->profile->update(array_merge($data, ['image'=>$imagePath]));
+        $user->profile->update($data);
         
         return redirect("/profile/{$user->id}");
     }
