@@ -29,3 +29,5 @@ Route::get('/p/create', 'PostController@create')->name('post.create');
 Route::get('/p/{post}', 'PostController@show')->name('post.show');
 Route::post('/p', 'PostController@store')->name('post.store');
     
+// follow
+Route::post('follow/{user}', 'FollowController@store');

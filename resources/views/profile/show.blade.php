@@ -14,14 +14,14 @@
                         <a href="/p/create" class="btn btn-primary">Add post</a>
                         <a href="/profile/{{ $user->id }}/edit" class="btn btn-primary">Edit profile</a>
                     @else
-                        <button class="btn btn-primary">Follow</button>
+                        <follow-button user-id="{{ $user->id }}" follows="{{ $follows }}"></follow-button>
                     @endcan
                 </div>
             </div>
             <div class="d-flex">
                 <div class="pr-5"><strong>{{ $user->posts->count() }}</strong> posts</div>
-                <div class="pr-5"><strong>23k</strong> followers</div>
-                <div class="pr-5"><strong>212</strong> following</div>
+                <div class="pr-5"><strong>{{ $user->profile->followers->count() }}</strong> followers</div>
+                <div class="pr-5"><strong>{{ $user->following->count() }}</strong> following</div>
             </div>
             <div class="pt-4 font-weight-bold">
                 {{ $user->profile->title }}
